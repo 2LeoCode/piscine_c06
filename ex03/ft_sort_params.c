@@ -6,7 +6,7 @@
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 13:56:09 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/02/13 18:16:18 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/02/18 12:30:23 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,16 @@ int		main(int argc, char **argv)
 
 int		ft_sort_params(int seuil, int max, char **tab_str)
 {
-	int i;
-	char *index;
+	int		i;
+	char	*index;
 
 	i = seuil;
 	if (seuil == max)
-		return(0);
+		return (0);
 	else
 	{
 		while (++i < max)
-			if(ft_strcmp(tab_str[seuil], tab_str[i]) > 0)
+			if (ft_strcmp(tab_str[seuil], tab_str[i]) > 0)
 			{
 				index = tab_str[seuil];
 				tab_str[seuil] = tab_str[i];
