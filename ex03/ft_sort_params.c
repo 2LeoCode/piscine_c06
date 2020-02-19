@@ -6,7 +6,7 @@
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 13:56:09 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/02/18 12:30:23 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/02/19 18:56:11 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int		main(int argc, char **argv)
 {
 	ft_sort_params(0, argc, argv);
 	ft_print_params(argc, argv);
+	return(0);
 }
 
 int		ft_sort_params(int seuil, int max, char **tab_str)
