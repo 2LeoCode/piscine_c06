@@ -6,7 +6,7 @@
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 13:56:09 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/02/19 20:53:00 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/02/21 11:30:34 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_putstr(char *str);
 
 int		main(int argc, char **argv)
 {
-	ft_sort_params(0, argc, argv);
+	ft_sort_params(1, argc, argv);
 	ft_print_params(argc, argv);
 	return (0);
 }
@@ -50,23 +50,11 @@ int		ft_strcmp(char *s1, char *s2)
 {
 	int i;
 
-	i = 0;
-	while (s1[i])
-	{
-		if (!s2[i])
-			return (s1[i]);
-		if (s1[i] < s2[i])
-			break ;
-		if (s1[i] > s2[i])
-			break ;
-		i++;
-	}
-	if (s1[i])
-		return (s1[i] - s2[i]);
-	else if (s2[i])
-		return (0 - s2[i]);
-	else
-		return (0);
+	i = -1;
+	while (s1[++i] && s2[i])
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+	return (s1[i] - s2[i]);
 }
 
 void	ft_print_params(int nb, char **params)
@@ -75,9 +63,7 @@ void	ft_print_params(int nb, char **params)
 
 	i = 0;
 	while (++i < nb)
-	{
 		ft_putstr(params[i]);
-	}
 }
 
 void	ft_putstr(char *str)
